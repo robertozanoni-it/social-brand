@@ -1601,6 +1601,12 @@ function renderDashboard(a, img) {
     
     // Render strategy score
     renderStrategyScore();
+
+    // Render color psychology
+    renderColorPsychology(a);
+
+    // Render action plan
+    renderActionPlan(a);
 }
 
 // ==================== MEDIA TYPE RECOMMENDATION ====================
@@ -1805,7 +1811,7 @@ function generateStrategicData(a) {
     
     // ── TONE ──
     let tono = nd;
-    const brightness = a.avgBrightness;
+    const brightness = a.lumMean;
     const contrast = a.rmsContrast;
     if (brightness > 170 && contrast < 50) tono = 'Soft, accogliente, rassicurante';
     else if (contrast > 80) tono = 'Bold, diretto, d\'impatto';
